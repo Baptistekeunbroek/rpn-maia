@@ -44,4 +44,9 @@ describe("getting solutions", () => {
     const res = getSolution("12 10 14 9 max");
     expect(res).toEqual(14);
   });
+
+  test("test addition float", () => {
+    const res = getSolution("42.5 20.5 +");
+    expect(res).toEqual(63);
+  });
 });

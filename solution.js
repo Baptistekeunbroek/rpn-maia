@@ -5,8 +5,8 @@ function getSolution(rpnExpression) {
   stack = [];
   rpnExpressionSplited = rpnExpression.split(" ");
   rpnExpressionSplited.forEach((value) => {
-    const isNum = /^\d+$/.test(value);
-    if (isNum) {
+    const isNumOrDecimal = /^\d*\.?\d+$/.test(value);
+    if (isNumOrDecimal) {
       stack.push(Number(value));
     } else if (value === "+") {
       const num1 = stack.pop();

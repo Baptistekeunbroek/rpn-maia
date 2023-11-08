@@ -1,5 +1,5 @@
 function getSolution(rpnExpression) {
-  return Number(rpnExpression);
+  return [Number(rpnExpression)];
 }
 
 module.exports = getSolution;

@@ -24,6 +24,9 @@ function getSolution(rpnExpression) {
       const num1 = stack.pop();
       const num2 = stack.pop();
       stack.push(num2 / num1);
+    } else if (value === "sqrt") {
+      const num1 = stack.pop();
+      stack.push(Math.sqrt(num1));
     }
   });
   return stack[0];

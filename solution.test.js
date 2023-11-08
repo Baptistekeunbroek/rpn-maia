@@ -34,4 +34,9 @@ describe("getting solutions", () => {
   test("test empty", () => {
     expect(() => getSolution(" ")).toThrow(TypeError);
   });
+
+  test("test sqrt", () => {
+    const res = getSolution("9 sqrt");
+    expect(res).toEqual(3);
+  });
 });

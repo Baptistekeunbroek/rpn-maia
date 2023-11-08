@@ -1,4 +1,7 @@
 function getSolution(rpnExpression) {
+  if (rpnExpression == " ") {
+    throw TypeError("Empty string");
+  }
   stack = [];
   rpnExpressionSplited = rpnExpression.split(" ");
   rpnExpressionSplited.forEach((value) => {

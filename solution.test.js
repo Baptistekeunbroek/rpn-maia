@@ -30,4 +30,8 @@ describe("getting solutions", () => {
     const res = getSolution("4 2 + 3 -");
     expect(res).toEqual(3);
   });
+
+  test("test empty", () => {
+    expect(() => getSolution(" ")).toThrow(TypeError);
+  });
 });

@@ -25,4 +25,9 @@ describe("getting solutions", () => {
     const res = getSolution("42 20 /");
     expect(res).toEqual(2.1);
   });
+
+  test("test two operation", () => {
+    const res = getSolution("4 2 + 3 -");
+    expect(res).toEqual(3);
+  });
 });

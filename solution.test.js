@@ -33,6 +33,7 @@ describe("getting solutions", () => {
 
   test("test empty", () => {
     expect(() => getSolution(" ")).toThrow(TypeError);
+    expect(() => getSolution(" ")).toThrow("Empty string");
   });
 
   test("test sqrt", () => {
@@ -48,5 +49,10 @@ describe("getting solutions", () => {
   test("test addition float", () => {
     const res = getSolution("42.5 20.5 +");
     expect(res).toEqual(63);
+  });
+
+  test("test not enough operands", () => {
+    expect(() => getSolution("3 +")).toThrow(TypeError);
+    expect(() => getSolution("3 +")).toThrow("Not enough operands");
   });
 });

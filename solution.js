@@ -8,6 +8,11 @@ function getSolution(rpnExpression) {
     const isNumOrDecimal = /^\d*\.?\d+$/.test(value);
     if (isNumOrDecimal) {
       stack.push(Number(value));
+    } else if (value === "sqrt") {
+      const num1 = stack.pop();
+      stack.push(Math.sqrt(num1));
+    } else if (stack.length < 2) {
+      throw TypeError("Not enough operands");
     } else if (value === "+") {
       const num1 = stack.pop();
       const num2 = stack.pop();
@@ -24,9 +29,6 @@ function getSolution(rpnExpression) {
       const num1 = stack.pop();
       const num2 = stack.pop();
       stack.push(num2 / num1);
-    } else if (value === "sqrt") {
-      const num1 = stack.pop();
-      stack.push(Math.sqrt(num1));
     } else if (value === "max") {
       stackCopy = stack.slice();
       stack = [];

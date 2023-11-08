@@ -27,6 +27,10 @@ function getSolution(rpnExpression) {
     } else if (value === "sqrt") {
       const num1 = stack.pop();
       stack.push(Math.sqrt(num1));
+    } else if (value === "max") {
+      stackCopy = stack.slice();
+      stack = [];
+      stack.push(Math.max(...stackCopy));
     }
   });
   return stack[0];

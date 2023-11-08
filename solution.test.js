@@ -39,4 +39,9 @@ describe("getting solutions", () => {
     const res = getSolution("9 sqrt");
     expect(res).toEqual(3);
   });
+
+  test("test max", () => {
+    const res = getSolution("12 10 14 9 max");
+    expect(res).toEqual(14);
+  });
 });

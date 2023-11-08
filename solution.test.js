@@ -6,8 +6,23 @@ describe("getting solutions", () => {
     expect(res).toEqual(42);
   });
 
-  test("it parses single number", () => {
+  test("test addition", () => {
     const res = getSolution("42 20 +");
     expect(res).toEqual(62);
+  });
+
+  test("test soustraction", () => {
+    const res = getSolution("42 20 -");
+    expect(res).toEqual(22);
+  });
+
+  test("test multiplication", () => {
+    const res = getSolution("42 20 *");
+    expect(res).toEqual(840);
+  });
+
+  test("test division", () => {
+    const res = getSolution("42 20 /");
+    expect(res).toEqual(2.1);
   });
 });

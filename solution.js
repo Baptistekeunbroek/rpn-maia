@@ -8,7 +8,19 @@ function getSolution(rpnExpression) {
     } else if (value === "+") {
       const num1 = stack.pop();
       const num2 = stack.pop();
-      stack.push(num1 + num2);
+      stack.push(num2 + num1);
+    } else if (value === "-") {
+      const num1 = stack.pop();
+      const num2 = stack.pop();
+      stack.push(num2 - num1);
+    } else if (value === "*") {
+      const num1 = stack.pop();
+      const num2 = stack.pop();
+      stack.push(num2 * num1);
+    } else if (value === "/") {
+      const num1 = stack.pop();
+      const num2 = stack.pop();
+      stack.push(num2 / num1);
     }
   });
   return stack[0];
